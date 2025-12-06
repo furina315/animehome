@@ -1,6 +1,13 @@
 # 喜多的主页
 
+**Powered by SOLO(Trae AI)**
+**由Trae AI SOLO强力编写，完全AI**
+![trae](https://lf-cdn.trae.ai/obj/trae-ai-us/og.jpeg)
+
+---
+
 一个使用 Vite + React + TypeScript 开发的二次元风格个人主页。
+<br>**可以自由下载使用并修改代码**
 
 ## 技术栈
 
