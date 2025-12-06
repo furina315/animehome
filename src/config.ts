@@ -165,10 +165,15 @@ export const footerConfig = {
   ]
 }
 
+// 特效配置
+export const effectsConfig = {
+  // 是否启用樱花飘落效果
+  enableSakura: true
+}
+
 // API配置
 export const apiConfig = {
-  // 高德地图API key
-  amapKey: '388d0f45cc3098bf4dabc281ce0e46a9',
-  // WeatherAPI.com key
-  weatherApiKey: 'e8d91c79d0d7400d9c2143651252911'
+  weatherApiKey: 'e8d91c79d0d7400d9c2143651252911',
+  // QQ地图API key (用于自定义欢迎语的IP地址定位)
+  qqMapKey: '7KYBZ-ELAW3-DXU3U-OSCAY-3MYN5-NOF7Z'
 }

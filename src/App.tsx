@@ -23,7 +23,8 @@ import {
   techStack,
   projects,
   footerConfig,
-  apiConfig
+  apiConfig,
+  effectsConfig
 } from './config'
 
 // 定义类型
@@ -376,7 +377,7 @@ function App() {
       try {
         if (!ipLoacation) {
           var script = document.createElement('script')
-          var url = `https://apis.map.qq.com/ws/location/v1/ip?key=7KYBZ-ELAW3-DXU3U-OSCAY-3MYN5-NOF7Z&output=jsonp`
+          var url = `https://apis.map.qq.com/ws/location/v1/ip?key=${apiConfig.qqMapKey}&output=jsonp`
           script.src = url
 
           const qqmapCallback = (data: QQMapIPInfo) => {
@@ -465,14 +466,16 @@ function App() {
 
   // 生成樱花元素
   useEffect(() => {
-    // 生成10个樱花元素，优化性能
-    const sakura = Array.from({length: 10}, (_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      animationDelay: `${Math.random() * 5}s`,
-      animationDuration: `${Math.random() * 10 + 10}s`
-    }))
-    setSakuraElements(sakura)
+    if (effectsConfig.enableSakura) {
+      // 生成10个樱花元素，优化性能
+      const sakura = Array.from({length: 10}, (_, i) => ({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${Math.random() * 10 + 10}s`
+      }))
+      setSakuraElements(sakura)
+    }
   }, [])
 
 
@@ -507,7 +510,7 @@ function App() {
 
 
       {/* 樱花飘落效果 */}
-      {sakuraElements.map((sakura) => (
+      {effectsConfig.enableSakura && sakuraElements.map((sakura) => (
         <div 
           key={sakura.id} 
           className="sakura"
