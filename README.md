@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# 喜多的主页
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个使用 Vite + React + TypeScript 开发的二次元风格个人主页。
 
-Currently, two official plugins are available:
+## 技术栈
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite** - 构建工具
+- **React 18** - UI 框架
+- **TypeScript** - 类型安全
+- **CSS3** - 样式设计
+- **Axios** - API 请求
 
-## React Compiler
+## 主要功能
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌟 二次元风格设计，带有毛玻璃效果
+- 📍 IP 定位，根据地理位置显示个性化欢迎信息
+- 🌤️ 实时天气显示
+- ⏰ 时间问候语
+- 📱 响应式设计
+- 🎨 深色主题
+- 📁 项目展示，支持模态框查看更多
+- 🔧 可配置的个人信息、社交链接、项目等
 
-## Expanding the ESLint configuration
+## 快速开始
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 安装依赖
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 开发模式
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+## 配置说明
+
+所有配置都集中在 `src/config.ts` 文件中，包括：
+
+- 个人信息（名称、头像、简介等）
+- 社交链接
+- 背景图片
+- 兴趣爱好
+- 技术栈
+- 项目列表
+- 页脚配置
+- API 密钥
+
+## 浏览器支持
+
+现代浏览器（Chrome、Firefox、Safari、Edge）
+
+## 许可证
+
+MIT
